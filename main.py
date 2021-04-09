@@ -38,6 +38,21 @@ class Tabuleiro(object):
             print("ja jogou nesta posicao")
             return False
 
+    def checar_velha(self):
+        logging.info("função iniciada")
+        zeros = []
+        for linha in self.casas:
+            if 0 in linha:
+                zeros.append(True)
+            else:
+                zeros.append(False)
+        logging.debug("lista de zeros" + str(zeros))
+        if True not in zeros:
+            print("FIM DE JOGO - DEU VELHA")
+            return True
+        else:
+            return False
+
     def checar_linha(self, linha):
         if 0 in linha or not(linha[0] == linha[1] == linha[2]):
             return False
@@ -56,7 +71,7 @@ class Tabuleiro(object):
         for i in range(0,3):
             for j in range(3):
                 lista_aux[j][i] = self.casas[i][j]
-        return self.checar_linha(lista_aux)
+        return self.checar_linhas(lista_aux)
 
     def checar_diagonal(self):
         logging.info("funcao iniciada")
@@ -109,16 +124,24 @@ class Main(object):
         self.tabuleiro = Tabuleiro()
         self.jogador1 = Jogador(1, "JOGADOR 1")
         self.jogador2 = Jogador(-1, "JOGADOR 2")
-        self.vitoria = False
+        self.fim = False
 
     def mainloop(self):
         self.tabuleiro.imprimir()
-        while not self.vitoria: 
-            self.vitoria = self.jogador1.jogar(self.tabuleiro)
-            if not self.vitoria:
-                self.vitoria = self.jogador2.jogar(self.tabuleiro)
-            else:
+        while not self.fim: 
+            self.fim = self.jogador1.jogar(self.tabuleiro)
+            if self.fim:
                 break
+            else:
+                logging.debug("jogador1 não ganhou, checando velha...")
+                self.fim = self.tabuleiro.checar_velha()
+                if self.fim:
+                    break
+                else:
+                    logging.debug("vez do jogador 2...")
+                    self.fim = self.jogador2.jogar(self.tabuleiro)
+                    logging.debug("ninguem ganhou, procurando velha!")
+                    self.fim = self.tabuleiro.checar_velha()
 
 main = Main()
 main.mainloop()

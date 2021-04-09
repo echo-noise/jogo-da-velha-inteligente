@@ -1,26 +1,40 @@
 import logging
+import random
 
-logging.basicConfig(format="%(levelname)s>%(funcName)s: %(message)s", level=logging.DEBUG)
+# tipos de jogadores
+MANUAL = 0
+ALEATORIO = 1
+
+#logging.basicConfig(format="%(levelname)s>%(funcName)s: %(message)s", level=logging.DEBUG)
 
 class Jogador(object):
-    def __init__(self, codigo, nome):
+    def __init__(self, codigo, nome, tipo):
         self.codigo = codigo
         self.nome = nome
+        self.tipo = tipo
 
     def jogar(self, tabuleiro):
         logging.info("funcao iniciada")
         print(self.nome)
         sucesso = False
         while not sucesso:
-            linha = int(input("Linha>")) - 1
-            coluna = int(input("coluna>")) - 1
+            if self.tipo == MANUAL:
+                linha = int(input("Linha>")) - 1
+                coluna = int(input("coluna>")) - 1
+            elif self.tipo == ALEATORIO:
+                linha = random.randint(0,2)
+                coluna = random.randint(0,2)
             sucesso = tabuleiro.preencher(self.codigo, linha, coluna)
-            logging.info("sucesso ao jogar")
+        logging.info("jogada finalizada....")
         tabuleiro.imprimir()
         if tabuleiro.checar_vitoria():
             print(self.nome + " GANHOU")
             return True
         return False 
+
+    def jogar_aleatorio(self, tabuleiro):
+        logging.info("funcao iniciada")
+        print(self.nome)
 
 class Tabuleiro(object):
     def __init__(self):
@@ -122,8 +136,8 @@ class Main(object):
     def __init__(self):
         super().__init__()
         self.tabuleiro = Tabuleiro()
-        self.jogador1 = Jogador(1, "JOGADOR 1")
-        self.jogador2 = Jogador(-1, "JOGADOR 2")
+        self.jogador1 = Jogador(1, "JOGADOR 1", 0)
+        self.jogador2 = Jogador(-1, "MAQUINA", 1)
         self.fim = False
 
     def mainloop(self):
@@ -143,6 +157,7 @@ class Main(object):
                     logging.debug("ninguem ganhou, procurando velha!")
                     self.fim = self.tabuleiro.checar_velha()
 
+random.seed()
 main = Main()
 main.mainloop()
 

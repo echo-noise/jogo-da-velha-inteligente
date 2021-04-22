@@ -10,6 +10,7 @@ class Jogador(object):
         self.nome = nome
         self.tipo = tipo
         self.cerebro = None
+        self.vitorias = 0
 
     def jogar(self, tabuleiro):
         logging.info("funcao iniciada")
@@ -49,6 +50,7 @@ class Jogador(object):
         tabuleiro.imprimir()
         if tabuleiro.checar_vitoria():
             print(self.nome + " GANHOU")
+            self.vitorias += 1
             return True
         return False 
 
@@ -86,6 +88,7 @@ class Tabuleiro(object):
                       [0, 0, 0],
                       [0, 0, 0]]
         self.rodadas = 0
+        self.velhas = 0
 
     def esta_vazio(self, coordenada, matriz):
         if len(coordenada) > 2:
@@ -123,6 +126,7 @@ class Tabuleiro(object):
 
         if True not in zeros:
             print("FIM DE JOGO - DEU VELHA")
+            self.velhas += 1
             return True
         else:
             return False
@@ -151,7 +155,6 @@ class Tabuleiro(object):
 
     # converte as diagonais em linhas 
     def checar_diagonais(self):
-    #    logging.info("funcao iniciada")
         lista_aux = [0,0,0]
         matriz = []
 

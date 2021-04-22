@@ -16,32 +16,39 @@ class Main(object):
         self.tabuleiro.imprimir()
         while True: 
             if self.jogador1.jogar(self.tabuleiro):
-                placar[0] += 1
                 break
             elif self.tabuleiro.checar_velha():
-                placar[2] += 1
                 break
             logging.debug("jogo nao acabou, continuando")
             if self.jogador2.jogar(self.tabuleiro):
-                placar[1] += 1
                 break
             elif self.tabuleiro.checar_velha():
-                placar[2] += 1
                 break
 
 random.seed()
 jogador1 = Jogador(X, "MAQUINA", DIFICIL)
 jogador2 = Jogador(O, "ALEATORIO", ALEATORIO)
-placar = [0, 0, 0]
+
+with open(ARQUIVO, "a+") as historico:
+    historico.write("# INICIO DA EXECUÇÃO:{}\n".format(datetime.now()))
 
 for i in range (10):
+    partida_display = i + 1
     print("iniciando novo jogo")
-    print("partida #" + str(i))
+    print("partida #{}".format(partida_display))
 
     main = Main(jogador1, jogador2)
     main.mainloop()
-    placar_str = str(datetime.now()) + "| partidas:" + str(i+1) + " " + jogador1.nome + ":" + str(placar[0]) + " " + jogador2.nome + ":" + str(placar[1]) + " velha:" + str(placar[2]) 
-    print(placar_str)
+
+    placar = "---- partidas:{} {}:{}({:.1f}%) {}:{}({:.1f}%) velha:{}({:.1f}%)"
+    placar = placar.format(partida_display, jogador1.nome, jogador1.vitorias,
+                          (jogador1.vitorias / partida_display)*100, jogador2.nome, 
+                           jogador2.vitorias, (jogador2.vitorias / partida_display)*100,
+                           main.tabuleiro.velhas, (main.tabuleiro.velhas / partida_display)*100
+                           )
+    print(placar)
     with open(ARQUIVO, "a+") as historico:
-        historico.write(placar_str)
-        historico.write("\n")
+        historico.write(placar + "\n")
+
+with open(ARQUIVO, "a+") as historico:
+    historico.write("# FIM DA EXECUÇÃO:{}\n".format(datetime.now()))

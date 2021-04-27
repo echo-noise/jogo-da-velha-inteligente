@@ -338,64 +338,111 @@ raiz_segundo.folhas[0].folhas[13].folhas.append(Folha(CANTO_SUP_DIR))
 raiz_segundo.folhas[0].folhas[13].folhas[2].folhas.append(Folha(CANTO_INF_ESQ))
 raiz_segundo.folhas[0].folhas[13].folhas[2].folhas.append(Folha(MEIO_INF))
 
-# adv jogou no meio
+#########################################################
+###-------- adversario começa jogando no meio --------###
+#########################################################
 raiz_segundo.folhas.append(Folha(CANTO_SUP_ESQ))
 
-# adv joga no canto oposto
-# 1.0
-raiz_segundo.folhas[1].folhas.append(Folha(CANTO_SUP_DIR, [CANTO_INF_ESQ, MEIO_SUP,
-                                                           MEIO_INF, BORDA_ESQ,
-                                                           BORDA_DIR]))
-# 1.0.1
-raiz_segundo.folhas[1].folhas[0].folhas.append(Folha(MEIO_SUP))
-# 1.0.2
-raiz_segundo.folhas[1].folhas[0].folhas.append(Folha(MEIO_INF))
-
-# ver os meios
-# 1.0.1.1
-raiz_segundo.folhas[1].folhas[0].folhas[1].folhas.append(Folha(BORDA_DIR))
-# 1.0.1.2
-raiz_segundo.folhas[1].folhas[0].folhas[1].folhas.append(Folha(BORDA_ESQ))
-# adv forma diagonal
-# 1.1
+# assistir diagonal
+# 1.0 d1
 raiz_segundo.folhas[1].folhas.append(Folha(CANTO_INF_ESQ, [CANTO_INF_DIR, MEIO_SUP,
                                                            MEIO_INF, BORDA_ESQ,
                                                            BORDA_DIR]))
+# 1.0.0
+raiz_segundo.folhas[1].folhas[0].folhas.append(Folha(BORDA_ESQ))
+# 1.0.1
+raiz_segundo.folhas[1].folhas[0].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[1].folhas[0].folhas[1].folhas.append(Folha(MEIO_INF))
+raiz_segundo.folhas[1].folhas[0].folhas[1].folhas.append(Folha(MEIO_SUP))
+
+# 1.1 d2
+raiz_segundo.folhas[1].folhas.append(Folha(CANTO_SUP_DIR , [CANTO_INF_DIR, MEIO_SUP,
+                                                            MEIO_INF, BORDA_ESQ,
+                                                            BORDA_DIR]))
 # 1.1.0
-raiz_segundo.folhas[1].folhas[1].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[1].folhas[1].folhas.append(Folha(MEIO_SUP))
 # 1.1.1
-raiz_segundo.folhas[1].folhas[1].folhas.append(Folha(BORDA_DIR))
-raiz_segundo.folhas[1].folhas[1].folhas[1].folhas.append(Folha(MEIO_INF))
-raiz_segundo.folhas[1].folhas[1].folhas[1].folhas.append(Folha(MEIO_SUP))
-# adv forma linha no meio
+raiz_segundo.folhas[1].folhas[1].folhas.append(Folha(MEIO_INF))
+raiz_segundo.folhas[1].folhas[1].folhas[1].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[1].folhas[1].folhas[1].folhas.append(Folha(BORDA_ESQ))
 # 1.1.2
-raiz_segundo.folhas[1].folhas.append(Folha(MEIO_SUP, [BORDA_ESQ, BORDA_DIR]))
+raiz_segundo.folhas[1].folhas[1].folhas.append(Folha(BORDA_DIR))
+
+# adv forma linha no meio de baixo p cima
+# 1.2
+raiz_segundo.folhas[1].folhas.append(Folha(MEIO_SUP, [BORDA_ESQ, BORDA_DIR, CANTO_INF_DIR, CANTO_INF_ESQ]))
 raiz_segundo.folhas[1].folhas[2].folhas.append(Folha(CANTO_SUP_DIR)) 
 raiz_segundo.folhas[1].folhas[2].folhas.append(Folha(CANTO_INF_ESQ)) 
 raiz_segundo.folhas[1].folhas[2].folhas[1].folhas.append(Folha(BORDA_ESQ)) 
 raiz_segundo.folhas[1].folhas[2].folhas[1].folhas.append(Folha(BORDA_DIR)) 
-# mesma coisa so que debaixo
-# 1.1.3
-raiz_segundo.folhas[1].folhas.append(Folha(MEIO_INF, [BORDA_ESQ, BORDA_DIR]))
-raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(CANTO_INF_ESQ)) 
+
+# forma linha no meio de cima p baixo
+# 1.3
+raiz_segundo.folhas[1].folhas.append(Folha(MEIO_INF, [BORDA_ESQ, BORDA_DIR, CANTO_INF_DIR, CANTO_INF_ESQ]))
+raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(CANTO_INF_ESQ, [BORDA_DIR, BORDA_ESQ])) 
 raiz_segundo.folhas[1].folhas[3].folhas[0].folhas.append(Folha(BORDA_ESQ)) 
-raiz_segundo.folhas[1].folhas[3].folhas[0].folhas.append(Folha(CANTO_INF_DIR)) 
-raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(CANTO_SUP_DIR))
-raiz_segundo.folhas[1].folhas[3].folhas[1].folhas.append(Folha(MEIO_SUP))
-raiz_segundo.folhas[1].folhas[3].folhas[1].folhas.append(Folha(MEIO_INF))
-raiz_segundo.folhas[1].folhas[3].folhas[1].folhas[1].folhas.append(Folha(BORDA_ESQ))
-raiz_segundo.folhas[1].folhas[3].folhas[1].folhas[1].folhas.append(Folha(BORDA_DIR))
-# adv forma linha na vertical
-# 1.1.4
-raiz_segundo.folhas[1].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[1].folhas[3].folhas[0].folhas.append(Folha(BORDA_DIR)) 
+# 0.3.1
+raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(CANTO_SUP_DIR, [BORDA_DIR, BORDA_ESQ])) 
+raiz_segundo.folhas[1].folhas[3].folhas[1].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[1].folhas[3].folhas[1].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[1].folhas[3].folhas[1].folhas.append(Folha(CANTO_INF_DIR))
+raiz_segundo.folhas[1].folhas[3].folhas[1].folhas[2].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[1].folhas[3].folhas[1].folhas[2].folhas.append(Folha(BORDA_DIR))
+
+raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(BORDA_DIR)) 
+raiz_segundo.folhas[1].folhas[3].folhas[2].folhas.append(Folha(CANTO_INF_ESQ)) 
+raiz_segundo.folhas[1].folhas[3].folhas[2].folhas.append(Folha(CANTO_SUP_DIR)) 
+# 1.3.3
+raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(BORDA_ESQ)) 
+raiz_segundo.folhas[1].folhas[3].folhas[3].folhas.append(Folha(CANTO_INF_ESQ)) 
+raiz_segundo.folhas[1].folhas[3].folhas[3].folhas.append(Folha(CANTO_SUP_DIR)) 
+
+# adv forma linha na horizontal esquerda 
+# 1.4
+raiz_segundo.folhas[1].folhas.append(Folha(BORDA_ESQ, [CANTO_INF_DIR]))
 raiz_segundo.folhas[1].folhas[4].folhas.append(Folha(CANTO_INF_ESQ))
+# 141
 raiz_segundo.folhas[1].folhas[4].folhas.append(Folha(CANTO_SUP_DIR))
 raiz_segundo.folhas[1].folhas[4].folhas[1].folhas.append(Folha(MEIO_SUP))
 raiz_segundo.folhas[1].folhas[4].folhas[1].folhas.append(Folha(MEIO_INF))
-# ao contrario
-# 1.1.5
-raiz_segundo.folhas[1].folhas.append(Folha(BORDA_DIR))
+# 142
+raiz_segundo.folhas[1].folhas[4].folhas.append(Folha(MEIO_INF))
+raiz_segundo.folhas[1].folhas[4].folhas[2].folhas.append(Folha(CANTO_SUP_DIR))
+
+# forma linha na horizontal direita
+# 1.5
+raiz_segundo.folhas[1].folhas.append(Folha(BORDA_DIR, [CANTO_INF_DIR]))
+# 1.5.1
+raiz_segundo.folhas[1].folhas[5].folhas.append(Folha(CANTO_SUP_DIR, [MEIO_SUP, MEIO_INF]))
+raiz_segundo.folhas[1].folhas[5].folhas[0].folhas.append(Folha(MEIO_SUP))
+raiz_segundo.folhas[1].folhas[5].folhas[0].folhas.append(Folha(MEIO_INF))
+raiz_segundo.folhas[1].folhas[5].folhas[0].folhas.append(Folha(CANTO_INF_DIR))
+raiz_segundo.folhas[1].folhas[5].folhas[0].folhas.append(Folha(CANTO_INF_ESQ))
+
+raiz_segundo.folhas[1].folhas[5].folhas.append(Folha(MEIO_SUP, [CANTO_SUP_DIR, CANTO_INF_ESQ]))
+raiz_segundo.folhas[1].folhas[5].folhas[1].folhas.append(Folha(CANTO_SUP_DIR))
+raiz_segundo.folhas[1].folhas[5].folhas[1].folhas.append(Folha(CANTO_INF_ESQ))
+# 1.5.2
+raiz_segundo.folhas[1].folhas[5].folhas.append(Folha(MEIO_INF, [CANTO_INF_ESQ, CANTO_SUP_DIR]))
+raiz_segundo.folhas[1].folhas[5].folhas[2].folhas.append(Folha(CANTO_SUP_DIR))
+raiz_segundo.folhas[1].folhas[5].folhas[2].folhas.append(Folha(CANTO_INF_ESQ))
+# 1.5.3
 raiz_segundo.folhas[1].folhas[5].folhas.append(Folha(CANTO_INF_ESQ))
-raiz_segundo.folhas[1].folhas[5].folhas.append(Folha(MEIO_SUP))
-raiz_segundo.folhas[1].folhas[5].folhas[1].folhas.append(Folha(MEIO_SUP))
-raiz_segundo.folhas[1].folhas[5].folhas[1].folhas.append(Folha(MEIO_INF))
+raiz_segundo.folhas[1].folhas[5].folhas[3].folhas.append(Folha(MEIO_INF))
+raiz_segundo.folhas[1].folhas[5].folhas[3].folhas.append(Folha(MEIO_SUP))
+
+# 1.5.4
+raiz_segundo.folhas[1].folhas[5].folhas.append(Folha(CANTO_SUP_DIR))
+
+# jogou n ocanto oposto
+# 1.6 
+raiz_segundo.folhas[1].folhas.append(Folha(CANTO_SUP_DIR))
+# 1.7.1
+raiz_segundo.folhas[1].folhas[6].folhas.append(Folha(MEIO_SUP))
+# 1.7.2
+raiz_segundo.folhas[1].folhas[6].folhas.append(Folha(MEIO_INF))
+# ver os meios
+raiz_segundo.folhas[1].folhas[6].folhas[1].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[1].folhas[6].folhas[1].folhas.append(Folha(BORDA_ESQ))
+

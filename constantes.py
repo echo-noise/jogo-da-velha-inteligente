@@ -33,5 +33,5 @@ DIFICIL = 3
 # historico
 ARQUIVO = "historico.txt"
 
-forcar_meio = 1
+forcar_meio = 0
 forcar_canto = 0

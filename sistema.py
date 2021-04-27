@@ -14,7 +14,7 @@ class Jogador(object):
 
     def jogar(self, tabuleiro):
         logging.info("funcao iniciada")
-        print(self.nome)
+        print("{} ({})".format(self.nome, self.codigo))
         sucesso = False
 
         while not sucesso:
@@ -61,24 +61,24 @@ class Jogador(object):
             self.cerebro = Arvore(raiz_comeca)
             return self.cerebro.ramo_atual.posicao
         elif tabuleiro.rodadas == 2:
-            logging.debug("ainda nao implementado")
-        else:
-            logging.debug("numero de possibilidades: " + str(len(self.cerebro.ramo_atual.folhas)))
+            self.cerebro = Arvore(raiz_segundo)
+        
+        logging.debug("numero de possibilidades: " + str(len(self.cerebro.ramo_atual.folhas)))
 
-            for i, folha in enumerate(self.cerebro.ramo_atual.folhas):
-                tentativas = []
-                logging.debug("folha: " + str(i))
-                logging.debug("condicoes: " + str(folha.condicao))
-                
-                for condicao in folha.condicao:
-                    logging.debug("testando condicao: " + str(condicao) + " precisa estar vazio")
-                    tentativas.append(tabuleiro.esta_vazio(condicao, tabuleiro.casas))
-                
-                if False in tentativas:
-                    logging.debug("folha descartada, proxima")
-                else:
-                    self.cerebro.navegar(folha)
-                    return self.cerebro.ramo_atual.posicao
+        for i, folha in enumerate(self.cerebro.ramo_atual.folhas):
+            tentativas = []
+            logging.debug("folha: " + str(i))
+            logging.debug("condicoes: " + str(folha.condicao))
+            
+            for condicao in folha.condicao:
+                logging.debug("testando condicao: " + str(condicao) + " precisa estar vazio")
+                tentativas.append(tabuleiro.esta_vazio(condicao, tabuleiro.casas))
+            
+            if False in tentativas:
+                logging.debug("folha descartada, proxima")
+            else:
+                self.cerebro.navegar(folha)
+                return self.cerebro.ramo_atual.posicao
 
 
 class Tabuleiro(object):

@@ -175,12 +175,19 @@ raiz_segundo.folhas[0].folhas[3].folhas[1].folhas.append(Folha(CANTO_SUP_DIR))
 raiz_segundo.folhas[0].folhas.append(Folha(CANTO_INF_ESQ, [BORDA_DIR, CANTO_SUP_DIR, 
                                                            CANTO_INF_DIR]))
 # distraçao
+# 0.4.0
 raiz_segundo.folhas[0].folhas[4].folhas.append(Folha(CANTO_SUP_DIR))
+# 0.4.1
 raiz_segundo.folhas[0].folhas[4].folhas.append(Folha(MEIO_SUP))
 # distraçao
 raiz_segundo.folhas[0].folhas[4].folhas[1].folhas.append(Folha(MEIO_INF))
 raiz_segundo.folhas[0].folhas[4].folhas[1].folhas.append(Folha(BORDA_DIR))
 raiz_segundo.folhas[0].folhas[4].folhas[1].folhas.append(Folha(CANTO_INF_DIR))
+# 0.4.2
+raiz_segundo.folhas[0].folhas[4].folhas.append(Folha(CANTO_SUP_ESQ))
+raiz_segundo.folhas[0].folhas[4].folhas[2].folhas.append(Folha(CANTO_INF_DIR))
+raiz_segundo.folhas[0].folhas[4].folhas[2].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[0].folhas[4].folhas[2].folhas.append(Folha(BORDA_DIR))
 
 # 2 os consecutivos na vertical esquerda sup
 raiz_segundo.folhas[0].folhas.append(Folha(CANTO_SUP_ESQ, [BORDA_DIR, CANTO_SUP_DIR, 
@@ -190,6 +197,7 @@ raiz_segundo.folhas[0].folhas[5].folhas.append(Folha(CANTO_INF_DIR))
 raiz_segundo.folhas[0].folhas[5].folhas.append(Folha(MEIO_INF))
 # distraçao
 raiz_segundo.folhas[0].folhas[5].folhas[1].folhas.append(Folha(MEIO_SUP))
+raiz_segundo.folhas[0].folhas[5].folhas[1].folhas.append(Folha(BORDA_DIR))
 raiz_segundo.folhas[0].folhas[5].folhas[1].folhas.append(Folha(CANTO_SUP_DIR))
 
 
@@ -204,6 +212,17 @@ raiz_segundo.folhas[0].folhas[6].folhas[1].folhas.append(Folha(MEIO_SUP))
 raiz_segundo.folhas[0].folhas[6].folhas[1].folhas.append(Folha(BORDA_ESQ))
 raiz_segundo.folhas[0].folhas[6].folhas[1].folhas.append(Folha(CANTO_SUP_ESQ))
 
+raiz_segundo.folhas[0].folhas[6].folhas.append(Folha(CANTO_INF_DIR))
+#distraçao
+raiz_segundo.folhas[0].folhas[6].folhas[2].folhas.append(Folha(CANTO_SUP_ESQ))
+raiz_segundo.folhas[0].folhas[6].folhas[2].folhas.append(Folha(BORDA_ESQ))
+
+# 2 os consecutivos na vertical - direita inf
+raiz_segundo.folhas[0].folhas.append(Folha(CANTO_INF_DIR, [BORDA_ESQ, CANTO_SUP_ESQ, 
+                                                           CANTO_INF_ESQ]))
+# distraçao
+raiz_segundo.folhas[0].folhas[7].folhas.append(Folha(CANTO_SUP_ESQ))
+
 # 2 os consecutivos na vertical - direita inf
 raiz_segundo.folhas[0].folhas.append(Folha(CANTO_INF_DIR, [BORDA_ESQ, CANTO_SUP_ESQ, 
                                                            CANTO_INF_ESQ]))
@@ -211,8 +230,12 @@ raiz_segundo.folhas[0].folhas.append(Folha(CANTO_INF_DIR, [BORDA_ESQ, CANTO_SUP_
 raiz_segundo.folhas[0].folhas[7].folhas.append(Folha(CANTO_SUP_ESQ))
 raiz_segundo.folhas[0].folhas[7].folhas.append(Folha(MEIO_SUP))
 # distraçao
-raiz_segundo.folhas[0].folhas[7].folhas[1].folhas.append(Folha(MEIO_INF))
-raiz_segundo.folhas[0].folhas[7].folhas[1].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[0].folhas[7].folhas[2].folhas.append(Folha(MEIO_INF))
+raiz_segundo.folhas[0].folhas[7].folhas[2].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[0].folhas[7].folhas[2].folhas.append(Folha(CANTO_INF_ESQ))
+raiz_segundo.folhas[0].folhas[7].folhas[2].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[0].folhas[7].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[0].folhas[7].folhas[3].folhas.append(Folha(BORDA_ESQ))
 
 # checar o espaçado - verticais
 raiz_segundo.folhas[0].folhas.append(Folha(BORDA_DIR, [CANTO_INF_ESQ, CANTO_SUP_ESQ, BORDA_ESQ]))
@@ -223,95 +246,156 @@ raiz_segundo.folhas[0].folhas[8].folhas.append(Folha(MEIO_SUP))
 
 raiz_segundo.folhas[0].folhas.append(Folha(BORDA_ESQ, [CANTO_INF_DIR, CANTO_SUP_DIR, BORDA_DIR]))
 # distraçao
-raiz_segundo.folhas[0].folhas[9].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[0].folhas[9].folhas.append(Folha(BORDA_ESQ))
+# 0.9.1
 raiz_segundo.folhas[0].folhas[9].folhas.append(Folha(MEIO_INF))
+raiz_segundo.folhas[0].folhas[9].folhas[1].folhas.append(Folha(MEIO_SUP))
+raiz_segundo.folhas[0].folhas[9].folhas[1].folhas.append(Folha(CANTO_SUP_ESQ))
+# 0.9.2
+raiz_segundo.folhas[0].folhas[9].folhas.append(Folha(CANTO_SUP_ESQ))
 raiz_segundo.folhas[0].folhas[9].folhas.append(Folha(MEIO_SUP))
 
 # checar espaçado - horizontais
 raiz_segundo.folhas[0].folhas.append(Folha(MEIO_SUP, [CANTO_INF_ESQ, CANTO_INF_DIR]))
-# distraçao
-raiz_segundo.folhas[0].folhas[10].folhas.append(Folha(MEIO_INF))
-raiz_segundo.folhas[0].folhas[10].folhas.append(Folha(CANTO_INF_ESQ))
+# distraçao - 0.10.0
+raiz_segundo.folhas[0].folhas[10].folhas.append(Folha(BORDA_DIR))
+# 0.10.1
+raiz_segundo.folhas[0].folhas[10].folhas.append(Folha(CANTO_INF_DIR))
+# 0.10.1.1
+raiz_segundo.folhas[0].folhas[10].folhas[1].folhas.append(Folha(CANTO_SUP_ESQ))
+# 0.10.1.2
+raiz_segundo.folhas[0].folhas[10].folhas[1].folhas.append(Folha(CANTO_SUP_DIR))
+# 0.10.1.3
+raiz_segundo.folhas[0].folhas[10].folhas[1].folhas.append(Folha(BORDA_ESQ))
+# 0.10.1.4
+raiz_segundo.folhas[0].folhas[10].folhas[1].folhas.append(Folha(MEIO_SUP))
+# 0.10.2
+raiz_segundo.folhas[0].folhas[10].folhas.append(Folha(MEIO_SUP))
 
+# 0.11
 raiz_segundo.folhas[0].folhas.append(Folha(MEIO_INF, [CANTO_SUP_ESQ, CANTO_SUP_DIR]))
 # distraçao
+# 0.11.0
+raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(MEIO_INF))
+# 0.11.1
 raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(MEIO_SUP))
-raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(BORDA_ESQ))
+# 0.11.2
+raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(CANTO_INF_ESQ))
+raiz_segundo.folhas[0].folhas[11].folhas[2].folhas.append(Folha(CANTO_INF_DIR))
+raiz_segundo.folhas[0].folhas[11].folhas[2].folhas.append(Folha(BORDA_DIR))
+# 0.11.3
+raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(CANTO_INF_ESQ, [CANTO_SUP_DIR]))
+raiz_segundo.folhas[0].folhas[11].folhas[3].folhas.append(Folha(CANTO_SUP_DIR))
+# 0.11.4
+raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[0].folhas[11].folhas[4].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[0].folhas[11].folhas[4].folhas.append(Folha(CANTO_INF_ESQ))
+# 0.11.5
+raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(CANTO_INF_DIR))
 
 # distraçao12
-raiz_segundo.folhas[0].folhas[11].folhas[1].folhas.append(Folha(BORDA_DIR))
-raiz_segundo.folhas[0].folhas[11].folhas[1].folhas.append(Folha(CANTO_INF_DIR))
-raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(BORDA_DIR))
-raiz_segundo.folhas[0].folhas[11].folhas[2].folhas.append(Folha(CANTO_SUP_ESQ))
-raiz_segundo.folhas[0].folhas[11].folhas[2].folhas.append(Folha(CANTO_SUP_DIR))
+raiz_segundo.folhas[0].folhas[11].folhas[1].folhas.append(Folha(CANTO_SUP_DIR))
+raiz_segundo.folhas[0].folhas[11].folhas[1].folhas[0].folhas.append(Folha(CANTO_INF_DIR))
 
-# 3
+raiz_segundo.folhas[0].folhas[11].folhas[1].folhas.append(Folha(CANTO_INF_DIR))
+raiz_segundo.folhas[0].folhas[11].folhas.append(Folha(CANTO_SUP_ESQ))
+raiz_segundo.folhas[0].folhas[11].folhas[2].folhas.append(Folha(CANTO_SUP_DIR))
+raiz_segundo.folhas[0].folhas[11].folhas[2].folhas.append(Folha(CANTO_INF_ESQ))
+
+# 0.12 
 raiz_segundo.folhas[0].folhas.append(Folha(BORDA_ESQ, [BORDA_DIR]))
 # distraçao
-raiz_segundo.folhas[0].folhas[12].folhas.append(Folha(BORDA_DIR))
+# 0.12.0
+raiz_segundo.folhas[0].folhas[12].folhas.append(Folha(MEIO_SUP))
+# 0.12.1
+raiz_segundo.folhas[0].folhas[12].folhas.append(Folha(CANTO_SUP_DIR, [CANTO_INF_ESQ]))
+raiz_segundo.folhas[0].folhas[12].folhas[1].folhas.append(Folha(CANTO_INF_ESQ))
+raiz_segundo.folhas[0].folhas[12].folhas[1].folhas.append(Folha(CANTO_SUP_ESQ))
+raiz_segundo.folhas[0].folhas[12].folhas[1].folhas.append(Folha(CANTO_SUP_DIR))
+# 0.12.2
 raiz_segundo.folhas[0].folhas[12].folhas.append(Folha(CANTO_INF_DIR, [MEIO_SUP, CANTO_SUP_DIR]))
 # distraçao13
-raiz_segundo.folhas[0].folhas[12].folhas[1].folhas.append(Folha(MEIO_INF))
-raiz_segundo.folhas[0].folhas[12].folhas[1].folhas.append(Folha(CANTO_SUP_DIR))
-raiz_segundo.folhas[0].folhas[12].folhas.append(Folha(CANTO_SUP_DIR, [MEIO_INF, CANTO_INF_DIR]))
-raiz_segundo.folhas[0].folhas[12].folhas.append(Folha(CANTO_INF_DIR))
+raiz_segundo.folhas[0].folhas[12].folhas[2].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[0].folhas[12].folhas[2].folhas.append(Folha(CANTO_INF_DIR))
+raiz_segundo.folhas[0].folhas[12].folhas[2].folhas.append(Folha(MEIO_INF))
+# 0.12.3
+raiz_segundo.folhas[0].folhas[12].folhas.append(Folha(CANTO_SUP_ESQ))
+raiz_segundo.folhas[0].folhas[12].folhas[3].folhas.append(Folha(CANTO_INF_DIR))
+raiz_segundo.folhas[0].folhas[12].folhas[3].folhas.append(Folha(CANTO_SUP_DIR))
+raiz_segundo.folhas[0].folhas[12].folhas[3].folhas.append(Folha(BORDA_DIR))
 
-# distraçao
-# 4
+# 0.13 
 raiz_segundo.folhas[0].folhas.append(Folha(MEIO_INF))
-raiz_segundo.folhas[0].folhas[13].folhas.append(Folha(BORDA_ESQ))
-raiz_segundo.folhas[0].folhas[13].folhas.append(Folha(MEIO_SUP))
+# 0.13.0
+raiz_segundo.folhas[0].folhas[13].folhas.append(Folha(BORDA_DIR))
+# 0.13.1
+raiz_segundo.folhas[0].folhas[13].folhas.append(Folha(CANTO_INF_DIR))
 # distraçao
-raiz_segundo.folhas[0].folhas[13].folhas[1].folhas.append(Folha(MEIO_INF))
-raiz_segundo.folhas[0].folhas[13].folhas[1].folhas.append(Folha(CANTO_INF_ESQ))
-
-
+raiz_segundo.folhas[0].folhas[13].folhas[1].folhas.append(Folha(CANTO_SUP_ESQ))
+raiz_segundo.folhas[0].folhas[13].folhas[1].folhas.append(Folha(MEIO_SUP))
+# 0.13.2
+raiz_segundo.folhas[0].folhas[13].folhas.append(Folha(CANTO_SUP_DIR))
+raiz_segundo.folhas[0].folhas[13].folhas[2].folhas.append(Folha(CANTO_INF_ESQ))
+raiz_segundo.folhas[0].folhas[13].folhas[2].folhas.append(Folha(MEIO_INF))
 
 # adv jogou no meio
 raiz_segundo.folhas.append(Folha(CANTO_SUP_ESQ))
 
 # adv joga no canto oposto
+# 1.0
 raiz_segundo.folhas[1].folhas.append(Folha(CANTO_SUP_DIR, [CANTO_INF_ESQ, MEIO_SUP,
                                                            MEIO_INF, BORDA_ESQ,
                                                            BORDA_DIR]))
+# 1.0.1
 raiz_segundo.folhas[1].folhas[0].folhas.append(Folha(MEIO_SUP))
+# 1.0.2
 raiz_segundo.folhas[1].folhas[0].folhas.append(Folha(MEIO_INF))
+
 # ver os meios
+# 1.0.1.1
 raiz_segundo.folhas[1].folhas[0].folhas[1].folhas.append(Folha(BORDA_DIR))
+# 1.0.1.2
 raiz_segundo.folhas[1].folhas[0].folhas[1].folhas.append(Folha(BORDA_ESQ))
 # adv forma diagonal
+# 1.1
 raiz_segundo.folhas[1].folhas.append(Folha(CANTO_INF_ESQ, [CANTO_INF_DIR, MEIO_SUP,
                                                            MEIO_INF, BORDA_ESQ,
                                                            BORDA_DIR]))
+# 1.1.0
 raiz_segundo.folhas[1].folhas[1].folhas.append(Folha(BORDA_ESQ))
+# 1.1.1
 raiz_segundo.folhas[1].folhas[1].folhas.append(Folha(BORDA_DIR))
 raiz_segundo.folhas[1].folhas[1].folhas[1].folhas.append(Folha(MEIO_INF))
 raiz_segundo.folhas[1].folhas[1].folhas[1].folhas.append(Folha(MEIO_SUP))
 # adv forma linha no meio
+# 1.1.2
 raiz_segundo.folhas[1].folhas.append(Folha(MEIO_SUP, [BORDA_ESQ, BORDA_DIR]))
 raiz_segundo.folhas[1].folhas[2].folhas.append(Folha(CANTO_SUP_DIR)) 
 raiz_segundo.folhas[1].folhas[2].folhas.append(Folha(CANTO_INF_ESQ)) 
 raiz_segundo.folhas[1].folhas[2].folhas[1].folhas.append(Folha(BORDA_ESQ)) 
 raiz_segundo.folhas[1].folhas[2].folhas[1].folhas.append(Folha(BORDA_DIR)) 
 # mesma coisa so que debaixo
+# 1.1.3
 raiz_segundo.folhas[1].folhas.append(Folha(MEIO_INF, [BORDA_ESQ, BORDA_DIR]))
-raiz_segundo.folhas[1].folhas[2].folhas.append(Folha(CANTO_INF_ESQ)) 
-raiz_segundo.folhas[1].folhas[2].folhas[2].folhas.append(Folha(BORDA_ESQ)) 
-raiz_segundo.folhas[1].folhas[2].folhas[2].folhas.append(Folha(CANTO_INF_DIR)) 
-raiz_segundo.folhas[1].folhas[2].folhas.append(Folha(CANTO_SUP_DIR))
-raiz_segundo.folhas[1].folhas[2].folhas[3].folhas.append(Folha(MEIO_SUP))
-raiz_segundo.folhas[1].folhas[2].folhas[3].folhas.append(Folha(MEIO_INF))
-raiz_segundo.folhas[1].folhas[2].folhas[3].folhas[1].folhas.append(Folha(BORDA_ESQ))
-raiz_segundo.folhas[1].folhas[2].folhas[3].folhas[1].folhas.append(Folha(BORDA_DIR))
-# adv forma linha na vertical
-raiz_segundo.folhas[1].folhas.append(Folha(BORDA_ESQ))
-raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(CANTO_INF_ESQ))
+raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(CANTO_INF_ESQ)) 
+raiz_segundo.folhas[1].folhas[3].folhas[0].folhas.append(Folha(BORDA_ESQ)) 
+raiz_segundo.folhas[1].folhas[3].folhas[0].folhas.append(Folha(CANTO_INF_DIR)) 
 raiz_segundo.folhas[1].folhas[3].folhas.append(Folha(CANTO_SUP_DIR))
 raiz_segundo.folhas[1].folhas[3].folhas[1].folhas.append(Folha(MEIO_SUP))
 raiz_segundo.folhas[1].folhas[3].folhas[1].folhas.append(Folha(MEIO_INF))
-# ao contrario
-raiz_segundo.folhas[1].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[1].folhas[3].folhas[1].folhas[1].folhas.append(Folha(BORDA_ESQ))
+raiz_segundo.folhas[1].folhas[3].folhas[1].folhas[1].folhas.append(Folha(BORDA_DIR))
+# adv forma linha na vertical
+# 1.1.4
+raiz_segundo.folhas[1].folhas.append(Folha(BORDA_ESQ))
 raiz_segundo.folhas[1].folhas[4].folhas.append(Folha(CANTO_INF_ESQ))
-raiz_segundo.folhas[1].folhas[4].folhas.append(Folha(MEIO_SUP))
+raiz_segundo.folhas[1].folhas[4].folhas.append(Folha(CANTO_SUP_DIR))
 raiz_segundo.folhas[1].folhas[4].folhas[1].folhas.append(Folha(MEIO_SUP))
 raiz_segundo.folhas[1].folhas[4].folhas[1].folhas.append(Folha(MEIO_INF))
+# ao contrario
+# 1.1.5
+raiz_segundo.folhas[1].folhas.append(Folha(BORDA_DIR))
+raiz_segundo.folhas[1].folhas[5].folhas.append(Folha(CANTO_INF_ESQ))
+raiz_segundo.folhas[1].folhas[5].folhas.append(Folha(MEIO_SUP))
+raiz_segundo.folhas[1].folhas[5].folhas[1].folhas.append(Folha(MEIO_SUP))
+raiz_segundo.folhas[1].folhas[5].folhas[1].folhas.append(Folha(MEIO_INF))

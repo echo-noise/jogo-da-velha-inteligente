@@ -21,6 +21,13 @@ class Jogador(object):
             if self.tipo == MANUAL:
                 linha = int(input("Linha>")) - 1
                 coluna = int(input("coluna>")) - 1
+            elif self.tipo == ALEATORIO and tabuleiro.rodadas == 1 and forcar_canto:
+                jogada = random.choice(CANTOS)
+                linha = jogada[0]
+                coluna = jogada[1]
+            elif self.tipo == ALEATORIO and tabuleiro.rodadas == 1 and forcar_meio:
+                linha = LINHAS["MEIO"]
+                coluna = COLUNAS["MEIO"]
             elif self.tipo == ALEATORIO:
                 linha = random.randint(0,2)
                 coluna = random.randint(0,2)
@@ -46,7 +53,7 @@ class Jogador(object):
                 pass
                 #logging.info("maquina jogou em uma posição ocupada, tentando de novo")
         
-        logging.info("jogada finalizada....")
+        #logging.info("jogada finalizada....")
         tabuleiro.imprimir()
         if tabuleiro.checar_vitoria():
             print(self.nome + " GANHOU")
@@ -63,20 +70,22 @@ class Jogador(object):
         elif tabuleiro.rodadas == 2:
             self.cerebro = Arvore(raiz_segundo)
         
-        logging.debug("numero de possibilidades: " + str(len(self.cerebro.ramo_atual.folhas)))
-
+        #logging.debug("numero de possibilidades: " + str(len(self.cerebro.ramo_atual.folhas)))
         for i, folha in enumerate(self.cerebro.ramo_atual.folhas):
-            tentativas = []
-            logging.debug("folha: " + str(i))
-            logging.debug("condicoes: " + str(folha.condicao))
+            aprovada = False
+            #logging.debug("folha: " + str(i))
+            #logging.debug("condicoes: " + str(folha.condicao))
             
             for condicao in folha.condicao:
-                logging.debug("testando condicao: " + str(condicao) + " precisa estar vazio")
-                tentativas.append(tabuleiro.esta_vazio(condicao, tabuleiro.casas))
+                #logging.debug("testando condicao: " + str(condicao) + " precisa estar vazio")
+                if not tabuleiro.esta_vazio(condicao, tabuleiro.casas):
+                    #logging.debug("folha descartada, proxima")
+                    aprovada = False
+                    break
+                else:
+                    aprovada = True
             
-            if False in tentativas:
-                logging.debug("folha descartada, proxima")
-            else:
+            if aprovada:
                 self.cerebro.navegar(folha)
                 return self.cerebro.ramo_atual.posicao
 
@@ -89,17 +98,21 @@ class Tabuleiro(object):
                       [0, 0, 0]]
         self.rodadas = 0
         self.velhas = 0
+    
+    def reset(self):
+        self.casas = [[0, 0, 0],
+                      [0, 0, 0],
+                      [0, 0, 0]
+                     ]
+        self.rodadas = 0
 
     def esta_vazio(self, coordenada, matriz):
-        if len(coordenada) > 2:
-            logging.error("erro na formatacao da arvore")
-            exit(1)
         linha = coordenada[0]
         coluna = coordenada[1]
         if matriz[linha][coluna] == 0:
-            logging.debug("sim")
+            #logging.debug("sim")
             return True
-        logging.debug("nao")
+        #logging.debug("nao")
         return False
 
     def preencher(self, jogador, linha, coluna):
